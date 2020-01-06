@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}	
+		.box{
+			width:500px;
+			height:500px;
+			border:20px solid skyblue;
+			position:relative;		}
+		.drag{
+			width:100px;
+			height:100px;
+			background: yellow;
+			position:absolute;
+			top:50px;
+			left:50px;
+		}
+	</style>
+	<link rel="stylesheet" href="jquery-ui.min.css">
+</head>
+
+<body>
+	<div class="box">
+		<div class="drag"></div>  
+	</div>
+	<script src="jquery-1.12.3.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script>
+		$('.drag').draggable();
+		console.log($('.drag').offset().top);
+		console.log($('.drag').offset().left);
+	</script>
+	<script>
+		var obj={
+			name:'zhangsan',
+			age:18,
+			gender:'male'
+		}
+	console.log(typeof obj);
+	
+	</script>
+</body>
+</html>

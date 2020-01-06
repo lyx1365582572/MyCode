@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>轮番图</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width: 560px;
+			height: 300px;
+			border: 5px solid gray;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+			
+		}
+		.m_unit{
+			width: 10000px;
+			height: 300px; 
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.m_unit ul{
+			overflow: hidden;
+		}
+			
+		
+		.m_unit ul li{
+			width: 560px;
+			height: 300px; 
+			float: left;
+			list-style: none;
+		}
+		.btn span{
+			width: 55px;
+			height: 55px
+			background: red;  
+			position: absolute; 
+			border-radius: 10px;
+			top:50%;
+			margin-top:-28px;
+		}
+		
+		.btn span.right{
+			
+			background: green; 
+			right:0;
+			 
+		}
+		.circle ul li{
+			float:left;
+			width:20px;
+			height:20px;
+			background:orange;
+			margin-right: 10px;
+			border-radius: 50%;
+			list-style: none;
+		}
+		.circle ul{
+			overflow:hidden;
+		}
+		.circle{
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+		}
+		.circle ul li.current{
+			background: #BC5D5E;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box" id="box">
+		<div class="m_unit" id="m_unit">
+			<ul>
+				<li><a href="#"><img width="560px" height="300px" src="../../壁纸/1.jpg" alt=""></a></li>
+				<li><a href="#"><img width="560px" height="300px" src="../../壁纸/2.jpg" alt=""></a></li>
+				<li><a href="#"><img width="560px" height="300px" src="../../壁纸/3.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="btn">
+			<span class="left" id="leftBtn"></span>
+			<span class="right" id="rightBtn"></span>
+		</div>
+		<div class="circle" id="circle">
+			<ul>
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<script src="animate-3.0.js"></script>
+	<script>
+		var box=document.getElementById('box');
+		var m_unit=document.getElementById('m_unit');
+		var imageUl=m_unit.getElementsByTagName('ul')[0];
+		var imlis=imageUl.getElementsByTagName('li');
+		var imgLength=imageUl.length;
+		
+		var leftBtn=document.getElementById('leftBtn');
+		var  rightBtn=document.getElementById('rightBtn');
+		var   circlelis=document.getElementById('circle').getElementsByTagName('li');
+		imageUl.appendChild(imlis[0].cloneNode(true));
+		var idx=0;
+		rightBtn.onclick=function(){
+			idx++;
+		
+		animate(m_unit,{'left':-560*2},1000,'BackEaseIn');
+			if(idx>imgLength-1){
+				idx=0;
+			}
+		}
+	</script>
+</body>
+</html>

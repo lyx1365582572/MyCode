@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+		var count = 0;
+		var timer = setInterval(function(){
+			count++;
+			console.log(Math.random());
+			if(count == 4){
+				clearInterval(timer);
+				callback();
+			}
+			
+		},1000);
+		function callback(){
+			console.log('输出完毕');
+		}
+		
+		var obj = {
+			'name':'zhansan',
+			'age':89
+		}
+		function haha(a,b,c){
+			console.log(this);
+			console.log(this.age);
+			console.log(a+b+c);
+		}
+		/*haha();
+		haha.call(obj);
+		haha.apply(obj);*/
+		haha.call(obj,10,20,30);
+		haha.apply(obj,[1,2,3]);
+	</script>
+</body>
+</html>
