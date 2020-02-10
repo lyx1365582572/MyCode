@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>document</title>
+	<style>
+		/*p{
+			width:100px;
+			height:100px;
+			background:skyblue;
+			float:left;
+			margin-right:10px;
+		}*/
+		.div{
+			width:200px;
+			height:200px;
+		}
+		.box{
+			width:200px;
+			height:200px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<!--<div class="box" id="idbox" style="width:200px;height:100px;background:red;"></div>-->
+	<!--<p>0</p>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p>5</p>-->
+	<div class="box" id="idbox" style="background:red;"></div>
+	<script>
+		/*var a= 10;
+		function haha(){
+			console.log(a);
+		}
+		haha();
+		for(var i=0;i<10;i++){
+			console.log(a);
+			}*/
+		/*var age=18;
+		function growup(){
+			age++;
+			console.log(age);
+		}
+		growup();
+		
+		function iszhishu(m){
+			if(yueshugeshu(m)==2){
+				return true;
+			}else{
+				return false;
+			}
+			function yueshugeshu(n){
+				var count=0;
+				for(var i=1;i<=n;i++){
+					if(n%i==0){
+						count++;
+					}
+					return count;
+				}
+			}
+		}
+		console.log(iszhishu(10));*/
+		/*function outer(){
+			var a=10;
+			function inner(){
+				console.log(a);
+			}
+			return inner;
+		}
+		var inn=outer();
+		inn();*/
+		/*var arr=[1,2,3,4,5];
+		function haha(){
+			
+		}
+		console.log(arr);
+		console.log(typeof arr);*/
+		/*var arr = ['东西','南北','南北','南北','南北'];
+		var a = arr.push('八万');
+		console.log(arr,a);*/
+		
+		/*var arr1=[1,2,3,4,5];
+		var arr2=[6,7,8,9];
+		var newarr=arr1.concat(arr2);
+		console.log(arr1,arr2,newarr);*/
+		/*var arr=[1,2,3,4,5];
+		var newarr = arr.slice(1,4);
+		console.log(newarr);*/
+		
+		/*function xingxing(n){
+			for(var i=0;i<n;i++){
+				var str='';
+				for(var j=0;j<n-i-1;j++){
+					str+=' ';
+				
+				}
+				for(var k=0;k<2*i+1;k++){
+					str+='*';
+					
+				}
+				console.log(str);
+			}
+		}
+		xingxing(8);*/
+		/*function rev(char){
+			var arr=char.split('');
+			arr.reverse();
+			return arr.join('');
+		}
+		var str=rev('abc');*/
+		/*var box=document.getElementById('idbox');
+		
+		//console.log(box.style.width);
+		box.style.width='800px';
+		box.style.border = '10px solid blue';
+		console.log(box.style.border);*/
+		/*var box = document.getElementById('idbox');
+		function haha(){
+			console.log('haha');
+		}
+		box.onclick=haha;*/
+		/*var box = document.getElementById('idbox');
+		box.setAttribute('class','xixi');*/
+		/*var ps=document.getElementsByTagName('p');
+		console.log(ps);
+		ps[0].style.background='red';*/
+		/*var ps = document.getElementsByTagName('p');
+		for(var i=0;i<ps.length;i++){
+			ps[i].idx=i;
+			ps[i].onclick=function(){
+				console.log(this.idx);
+			}
+		}*/
+		/*var ps =document.getElementsByTagName('p');
+		for(var i=0;i<ps.length;i++){
+			ps[i].onmouseover=function(){
+				for(var j=0;j<ps.length;j++){
+					ps[j].style.background='skyblue';
+				}
+				this.style.background='red';
+			}
+		}*/
+		var box=document.getElementById('idbox');
+		console.log(window.getComputedStyle(box));
+		console.log(typeof window.getComputedStyle(box));
+		console.log(window.getComputedStyle(box).getPropertyValue('width'));
+		console.log(getComputedStyle(box)['height']);
+	</script>
+	
+</body>
+</html>

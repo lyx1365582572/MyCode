@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>原型</title>
+	<style>
+	.box{
+		width:100px;
+		height:100px;
+	
+	}	
+	</style>
+	
+</head>
+
+<body>
+	<div class="box">
+		<p>pppp
+			<span>span1</span>
+		</p>
+	</div>
+	<span>span2</span>
+	<script src="jquery-1.12.3.min.js">
+		/*function haha(){
+			console.log('haha');
+		}
+		console.log(haha.prototype);
+		console.log(typeof haha.prototype);
+		function People(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		People.prototype={
+			gender:'male'
+		}
+		var xiaoming = new People('xiaoming',20);
+		console.log(xiaoming);
+		console.log('我叫'+this.name);*/
+		/*var arr=[1,2,3];
+		console.log(arr.__proto__);
+		function People(){
+			
+		}
+		console.log(People.__proto__.==Function.prototype);
+		Function.prototype.haha=function(){
+			console.log('haha');
+		}
+		People.haha();*/
+		/*function People(){
+			
+		}
+		People.prototype={
+			constructor:
+			haha:function(){
+				console.log('haha');
+			}
+		}
+		var xiaoming=new People();
+		xiaoming.haha();*/
+		
+		/*var arr=[-1,-2,-3];
+		var max=0;
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]>max){
+			   max=arr[i];
+			   }
+		}
+		console.log(max);
+		var arr1=[12,435,43,63,45];*/
+		/*function People(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		function Student(grade,score){
+			this.grade=grade;
+			this.score=score;
+		}
+		Student.prototype = new People();
+		console.log(window.outerWidth);*/
+		/*var str='abcabcdddd';
+		console.log(str.match('/abc/'));
+		console.log(str.match('/abc/g'));
+		console.log(/a/.exec('abc'));*/
+		/*var count =0;
+		var timer=setInterval(function(){
+			count++;
+			console.log(Math.random());
+			if(count == 10){
+			   clearInterval(timer);
+			   }
+		},1000);
+		function callback(){
+			console.log('输出完毕');
+			
+		}*/
+		/*var boxul=document.getElementsByTagName('ul');
+		var boxlis=boxul.getElementsByTagName('li');
+		boxul.appendChild(boxlis[0].cloneNode(true));
+		setInterval(function(){
+			idx++;
+			animate(boxul,{'top':-50px*idx},1000,function(){}){
+				
+			}
+		});*/
+		
+	</script>
+	<script>
+		/*console.log($('.box p span'));
+		console.log(jQuery('.box p span'));
+		$('.box p span').css('background','red');
+		$('.box p').css({
+			'width':200,
+			'height':200,
+			'background':'green',
+			'opacity':0.5
+		});*/
+		$('.box').animate({'left':300,'top':300},1000,function(){
+			console.log('运动完成');
+		});
+		$('#idbox').click(function(){
+			console.log('click');
+		});
+		$('#idbox').mouseenter(function(){
+			console.log('mouseenter');
+		});
+	</script>
+	
+</body>
+</html>
