@@ -58,12 +58,11 @@
     <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue/test.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="text.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue/text.html" useBuiltInWebServerPort="true">
+    <configuration name="text.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/vue/text.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.text.html" />
         <item itemvalue="JavaScript Debug.test.html" />
       </list>
     </recent_temporary>
@@ -80,7 +79,7 @@
       <updated>1581820870956</updated>
       <workItem from="1581820873509" duration="3062000" />
       <workItem from="1581824828464" duration="35000" />
-      <workItem from="1581824994571" duration="1684000" />
+      <workItem from="1581824994571" duration="5245000" />
     </task>
     <servers />
   </component>
