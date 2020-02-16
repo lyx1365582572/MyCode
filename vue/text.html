@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div id="app">
+<!--<div id="app">
     <h2>双大括号表达</h2>
     <p>{{msg}}</p>
     <p>{{msg.toUpperCase()}}</p>
@@ -19,7 +19,7 @@
     <button v-on:click="test">test1</button>
     <button @click="test2('aaa')">test1</button>
 </div>
-<script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
 <script type="text/javascript">
     new Vue({
         el:'#app',
@@ -36,6 +36,29 @@
             }
         }
     })
+    </script>-->
+<div id="demo">
+    姓:<input type="text" placeholder="First Name" v-model="firstName"><br>
+    名:<input type="text" placeholder="Last Name" v-model="lastName"><br>
+    姓名1（单向）:<input type="text" placeholder="Full Name1" V-model="fullName1"><br>
+    姓名2（单向）:<input type="text" placeholder="Full Name2" V-model="fullName2"><br>
+    姓名3（双向）:<input type="text" placeholder="Full Name3" V-model="fullName3"><br>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#demo',
+        data:{
+            firstName:'A',
+            lastName:'B'
+        },
+        computed:{
+            fullName1(){
+                console.log('fullName1()')
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+})
 </script>
 </body>
 </html>
