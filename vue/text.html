@@ -43,10 +43,13 @@
     姓名1（单向）:<input type="text" placeholder="Full Name1" V-model="fullName1"><br>
     姓名2（单向）:<input type="text" placeholder="Full Name2" V-model="fullName2"><br>
     姓名3（双向）:<input type="text" placeholder="Full Name3" V-model="fullName3"><br>
+    <p>{{fullName1}}</p>
+    <p>{{fullName1}}</p>
+    <p>{{fullName1}}</p>
 </div>
 <script type="text/javascript" src="./js/vue.js"></script>
 <script type="text/javascript">
-    new Vue({
+    const vm =new Vue({
         el:'#demo',
         data:{
             firstName:'A',
@@ -56,9 +59,29 @@
             fullName1(){
                 console.log('fullName1()')
                 return this.firstName + ' ' + this.lastName
+            },
+
+            fullName3: {
+                get() {
+                    return this.firstName + ' ' + this.lastName
+                },
+                set(value) {
+                    const names = value.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[1]
+                }
+            }
+            },
+        watch:{
+            firstName: function(value){
+                console.log(this)
+                this.fullName2 = value + ' ' + this.lastName
             }
         }
-})
+    })
+    vm.$watch('lastName',function(value){
+        this.fullName2=this.firstName + ' ' + value
+        })
 </script>
 </body>
 </html>
