@@ -2,7 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>class与style绑定</title>
+    <style>
+        .aClass {
+            color: red;
+        }
+        .bClass {
+            color: blue;
+        }
+        .cClass {
+            font-size: 20px;
+        }
+
+    </style>
 </head>
 <body>
 <!--<div id="app">
@@ -37,7 +49,7 @@
         }
     })
     </script>-->
-<div id="demo">
+<!--<div id="demo">
     姓:<input type="text" placeholder="First Name" v-model="firstName"><br>
     名:<input type="text" placeholder="Last Name" v-model="lastName"><br>
     姓名1（单向）:<input type="text" placeholder="Full Name1" V-model="fullName1"><br>
@@ -82,6 +94,39 @@
     vm.$watch('lastName',function(value){
         this.fullName2=this.firstName + ' ' + value
         })
+</script>-->
+<div id="demo">
+<h2>class绑定：:class='xxx'</h2>
+    <p class="cClass" :class="a">class绑定是字符串</p>
+    <p :class="{aClass:true,bClass:false}">class绑定是对象</p>
+    <p :class="{aClass:isA,bClass:isB}">class绑定是对象</p>
+    <p :class="['aClass','cClass']">class绑定是数组</p>
+<h2>style绑定</h2>
+    <p :style="{color:activeColor,fontSize:fontSize +'px'}">style</p>
+    <button @click="update">更新</button>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#demo',
+        data: {
+            a: 'aClass',
+            isA: 'true',
+            isB: 'false',
+            activeColor: 'red',
+            fontSize: 20
+        },
+        methods:{
+            update(){
+                this.a='bClass'
+                this.isA = false
+                this.isB = true
+                this.activeColor='green'
+                this.fontSize=30
+            }
+        }
+    })
+
 </script>
 </body>
 </html>
