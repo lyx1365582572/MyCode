@@ -95,7 +95,7 @@
         this.fullName2=this.firstName + ' ' + value
         })
 </script>-->
-<div id="demo">
+<!--<div id="demo">
 <h2>class绑定：:class='xxx'</h2>
     <p class="cClass" :class="a">class绑定是字符串</p>
     <p :class="{aClass:true,bClass:false}">class绑定是对象</p>
@@ -126,7 +126,64 @@
             }
         }
     })
+</script>-->
+<!--<div id="demo">
+    <p v-if="ok">if成功了</p>
+    <p v-else>if失败了</p>
+    <p v-show="ok">show成功了</p>
+    <p v-show="!ok">show失败了</p>
 
+    <button @click="ok=!ok">切换</button>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#demo',
+        data: {
+            ok: false
+        }
+    })
+</script>-->
+<div id="demo">
+    <h2>v-for遍历数组</h2>
+    <ul>
+        <li v-for="(p,index) in persons" :key="index">
+            {{index}}--{{p.name}}--{{p.age}}
+            <button @click="deleteP(index)">删除</button>
+            <button @click="updateP(index,{name: 'Cat',age: '55'})">更新</button>
+        </li>
+    </ul>
+    <h2>v-for遍历对象</h2>
+    <ul>
+        <li v-for="(value,key) in persons[1]" :key="key">
+            {{value}}--{{key}}
+
+        </li>
+
+    </ul>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#demo',
+        data: {
+            persons:[
+                {name:'tom1',age:18},
+                {name:'tom2',age:19},
+                {name:'tom3',age:20},
+                {name:'tom4',age:21},
+            ]
+        },
+        methods:{
+            deleteP (index) {
+                this.persons.splice(index,1)
+                },
+            updateP(index, newP){
+
+                this.persons.splice(index,1,newP)
+            }
+        }
+    })
 </script>
 </body>
 </html>
