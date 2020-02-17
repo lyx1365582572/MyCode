@@ -187,11 +187,11 @@
     })
  </script>
 -->
-<div id="test">
+<!--<div id="test">
     <input type="text">
     <ul>
         <li v-for="(p,index) in filterPersons" :key="index">
-            {{index}}--{{p.name}}--{{p.age}}
+            {{index}}&#45;&#45;{{p.name}}&#45;&#45;{{p.age}}
         </li>
     </ul>
 
@@ -241,6 +241,59 @@
                 this.orderType = orderType
             }
         }
+
+    })
+</script>-->
+<div id="example">
+    <h2>绑定监听</h2>
+    <button @click="test1">test1</button>
+    <button @click="test2('test22')">test2</button>
+    <button @click="test3($event)">test3</button>
+    <button @click="test4(123,$event)">test4</button>
+    <h2>事件修饰符
+        <div style="width: 200px;height:200px;background: indianred" @click="test5">
+            <div style="width: 100px;height:100px;background: yellowgreen" @click.stop="test6">事件冒泡
+            </div>
+        </div>
+        <a href="http://www.baidu.com" @click.prevent="test7">百度</a>
+    <h2>按键修饰符</h2>
+        <input tyoe="text" @keyup.enter="test8">
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#example',
+        data: {
+            test1 (){
+                alert('test1')
+            },
+            test2 (msg){
+                alert(msg)
+            },
+            test3 (event){
+                alert(event.target.innerHTML)
+            },
+            test4(number,event){
+                alert(number + '---' + event.target.innerHTML)
+            },
+            test5(){
+                alert('out')
+            },
+            test6(){
+                //event.stopPropagation()
+                alert('inner')
+            },
+            test7(){
+                //event.preventDefault()
+                alert('已点击')
+            },
+            test8(event){
+                alert(event.target.value + ' ' + event.keyCode)
+            }
+
+
+        }
+
 
     })
 </script>
