@@ -297,7 +297,7 @@
 
     })
 </script>-->
-<div id="demo">
+<!--<div id="demo">
     <form action="/xxx" @submit.prevent="handleSubmit">
         <span>用户名：</span>
         <input type="text" v-model="username"><br>
@@ -349,6 +349,57 @@
             }
         }
     })
+
+</script>-->
+<div id="test">
+    <button @click="destroyVM">vm</button>
+    <p v-show="isShow">vue生命周期练习</p>
+    <p>{{isShow}}</p>
+    <p>{{isShow}}</p>
+    <p>{{isShow}}</p>
+    <p>{{isShow}}</p>
+
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#test',
+        data: {
+            isShow: true
+        },
+        beforeCreate(){
+            cnsole.log('beforeCreate()')
+        },
+        created(){
+            cnsole.log('created()')
+        },
+        mounted(){
+            this.intervalId=setInterval(() => {
+                console.log('------')
+                this.isShow = !this.isShow
+            },1000)
+        },
+        beforeUpdate(){
+            cnsole.log('beforeUpdate()')
+        },
+        update(){
+            cnsole.log('update()')
+        },
+        beforeDestroy(){
+            cnsole.log('beforeDestroy()')
+            clearInterval(this.intervalId)
+        },
+        destroy(){
+            cnsole.log('destroy()')
+        },
+
+        methods: {
+            destroyVM (){
+                this.$destroy()
+            }
+        }
+    })
+
 
 </script>
 </body>
