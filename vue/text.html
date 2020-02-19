@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>过渡动画</title>
+    <title>过滤</title>
     <style>
         /*.aClass {
             color: red;
@@ -416,7 +416,7 @@
         }
     })
 </script>-->
-<div id="test1">
+<!--<div id="test1">
     <button @click="isShow=!isShow">toggle</button>
     <transition name="xxx">
         <p v-show="isShow">hello</p>
@@ -444,6 +444,26 @@
             return {
                 isShow: true
             }
+        }
+    })
+</script>-->
+<div id="test">
+    <h2>显示格式化的日期时间</h2>
+    <p>{{date}}</p>
+    <p>完整版：{{date | dateString}}</p>
+    <p>年月日：{{date | dateString('YYYY-MM-DD')}}</p>
+    <p>时分秒：{{date | dateString('HH:mm:ss')}}</p>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/moment.js/2.24.0/moment.js"></script>
+<script type="text/javascript">
+    Vue.filter('dateString',function(value,format){
+        return moment(value).format(format|| 'YYYY-MM-DD HH:mm:ss')
+    })
+    new Vue({
+        el: '#test',
+        data: {
+           date: new Date()
         }
     })
 </script>
