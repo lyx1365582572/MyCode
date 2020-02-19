@@ -13,21 +13,24 @@
         .cClass {
             font-size: 20px;
         }*/
-        .xxx-enter-active,.xxx-leave-active{
-            transition: opacity 1s;
-        }
-        .xxx-enter,.xxx-leave-to {
-            opacity: 0;
-        }
-        .move-enter-active {
-            transititon: all 1s
-        }
-        .move-leave-active {
-            transititon: all 3s
-        }
-        .move-enter,.move-leave-to {
-            opacity: 0;
-            transform: translateX(20px);
+        /*.xxx-enter-active,.xxx-leave-active{*/
+        /*    transition: opacity 1s;*/
+        /*}*/
+        /*.xxx-enter,.xxx-leave-to {*/
+        /*    opacity: 0;*/
+        /*}*/
+        /*.move-enter-active {*/
+        /*    transititon: all 1s*/
+        /*}*/
+        /*.move-leave-active {*/
+        /*    transititon: all 3s*/
+        /*}*/
+        /*.move-enter,.move-leave-to {*/
+        /*    opacity: 0;*/
+        /*    transform: translateX(20px);*/
+        /*}*/
+        [v-cloak] {
+            display: none;
         }
 
     </style>
@@ -447,7 +450,7 @@
         }
     })
 </script>-->
-<div id="test">
+<!--<div id="test">
     <h2>显示格式化的日期时间</h2>
     <p>{{date}}</p>
     <p>完整版：{{date | dateString}}</p>
@@ -464,6 +467,47 @@
         el: '#test',
         data: {
            date: new Date()
+        }
+    })
+</script>-->
+<div id="example">
+    <p>baidu.com</p>
+    <button @click="hint">提示</button>
+    <p v-cloak>{{msg}}</p>
+</div>
+<div id="test1">
+    <p v-upper-text="msg1"></p>
+    <p v-lower-text="msg1"></p>
+</div>
+<div id="test2">
+    <p v-upper-text="msg2"></p>
+    <p v-lower-text="msg2"></p>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    Vue.dir
+    new Vue({
+        el: '#example',
+        data: {
+            msg: '百度'
+        },
+        methods: {
+            hint (){
+                alert(this.$refs.content.textContent)
+            }
+        }
+
+    })
+    new Vue({
+        el: '#test1',
+        data: {
+            msg1: 'baidubaidu'
+        }
+    })
+    ew Vue({
+        el: '#test2',
+        data: {
+            msg1: 'wangyiwangyi'
         }
     })
 </script>
