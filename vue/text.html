@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>class与style绑定</title>
+    <title>过渡动画</title>
     <style>
-        .aClass {
+        /*.aClass {
             color: red;
         }
         .bClass {
@@ -12,6 +12,22 @@
         }
         .cClass {
             font-size: 20px;
+        }*/
+        .xxx-enter-active,.xxx-leave-active{
+            transition: opacity 1s;
+        }
+        .xxx-enter,.xxx-leave-to {
+            opacity: 0;
+        }
+        .move-enter-active {
+            transititon: all 1s
+        }
+        .move-leave-active {
+            transititon: all 3s
+        }
+        .move-enter,.move-leave-to {
+            opacity: 0;
+            transform: translateX(20px);
         }
 
     </style>
@@ -351,7 +367,7 @@
     })
 
 </script>-->
-<div id="test">
+<!--<div id="test">
     <button @click="destroyVM">vm</button>
     <p v-show="isShow">vue生命周期练习</p>
     <p>{{isShow}}</p>
@@ -375,7 +391,7 @@
         },
         mounted(){
             this.intervalId=setInterval(() => {
-                console.log('------')
+                console.log('&#45;&#45;&#45;&#45;&#45;&#45;')
                 this.isShow = !this.isShow
             },1000)
         },
@@ -399,8 +415,37 @@
             }
         }
     })
-
-
+</script>-->
+<div id="test1">
+    <button @click="isShow=!isShow">toggle</button>
+    <transition name="xxx">
+        <p v-show="isShow">hello</p>
+    </transition>
+</div>
+<div id="test2">
+    <button @click="isShow=!isShow">toggle</button>
+    <transition name="move">
+        <p v-show="isShow">hello</p>
+    </transition>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#test1',
+        data (){
+            return {
+                isShow: true
+            }
+        }
+    })
+    new Vue({
+        el: '#test2',
+        data (){
+            return {
+                isShow: true
+            }
+        }
+    })
 </script>
 </body>
 </html>
