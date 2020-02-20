@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>过滤</title>
+    <title>插件</title>
     <style>
         /*.aClass {
             color: red;
@@ -470,7 +470,7 @@
         }
     })
 </script>-->
-<div id="example">
+<!--<div id="example">
     <p>baidu.com</p>
     <button @click="hint">提示</button>
     <p v-cloak>{{msg}}</p>
@@ -510,6 +510,23 @@
             msg1: 'wangyiwangyi'
         }
     })
+</script>-->
+<div id="test">
+    <p v-my-directive="msg"></p>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="vue-myPlugin.js"></script>
+<script type="text/javascript">
+//声明使用插件
+    Vue.use(MyPlugin)
+    Vue.myGlobalMethod()
+    const vm =new Vue({
+        el: '#test',
+        data: {
+            msg:'想见你'
+    }
+})
+    vm.$myMethod()
 </script>
 </body>
 </html>
