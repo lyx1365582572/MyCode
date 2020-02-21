@@ -10,7 +10,7 @@
       </div>
     </header>
     <div class="container">
-      <Add/>
+      <Add :addComment="addComment"/>
       <List :comments="comments"/>
     </div>
   </div>
@@ -35,6 +35,11 @@ export default {
           content: '想见你'
         }
       ]
+    }
+  },
+  methods: {
+    assComment (comment) {
+      this.comments.unshift(comment)
     }
   },
   components: {
