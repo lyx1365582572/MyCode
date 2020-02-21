@@ -11,7 +11,7 @@
     </header>
     <div class="container">
       <Add :addComment="addComment"/>
-      <List :comments="comments"/>
+      <List :comments="comments" :deleteComment="addComment"/>
     </div>
   </div>
 </template>
@@ -38,8 +38,12 @@ export default {
     }
   },
   methods: {
-    assComment (comment) {
+    addComment (comment) {
       this.comments.unshift(comment)
+    }
+  },
+    deleteComment (index) {
+        this.comments.splice(index,1)
     }
   },
   components: {

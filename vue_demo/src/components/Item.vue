@@ -1,7 +1,7 @@
 <template>
       <li class="list-group-item">
         <div class="handle">
-          <a href="javascript:;">删除</a>
+          <a href="javascript:;" @click="deleteItem">删除</a>
         </div>
         <p class="user"><span >{{comment.name}}</span><span>说:</span></p>
         <p class="centence">{{comment.content}}</p>
@@ -11,7 +11,21 @@
 <script>
 export default {
   props: {
-    comment: Object
+    comment: Object,
+    deleteComment: Function,
+    index: Number
+  },
+
+  methods: {
+    deleteItem () {
+      // eslint-disable-next-line no-unused-vars
+      const {comment, index} = this
+      // eslint-disable-next-line no-template-curly-in-string
+      if (window.confirm('确定删除${comment}评论吗')) {
+          // eslint-disable-next-line no-undef
+        deleteComment(index)
+      }
+    }
   }
 
 }
